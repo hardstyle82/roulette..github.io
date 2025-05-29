@@ -1,0 +1,179 @@
+/* Все предыдущие стили остаются */
+
+/* Добавляем новые стили для новых элементов */
+
+/* Стили для уровней */
+.levels-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.level-progress {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.level-item {
+    text-align: center;
+    position: relative;
+    flex: 1;
+}
+
+.level-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 0 auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    position: relative;
+    z-index: 2;
+}
+
+.level-circle.reached {
+    background: linear-gradient(45deg, #f8d56b, #f5a623);
+    color: #333;
+}
+
+.level-line {
+    position: absolute;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    top: 25px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.level-line-progress {
+    height: 100%;
+    background: linear-gradient(90deg, #f8d56b, #f5a623);
+    transition: width 0.5s;
+}
+
+.level-info {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Стили для баннера с таймером */
+.countdown-banner {
+    background: linear-gradient(45deg, #9C27B0, #E91E63);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px 0;
+    color: white;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+.countdown-timer {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+    font-family: monospace;
+    letter-spacing: 2px;
+}
+
+.participate-btn {
+    background: white;
+    color: #9C27B0;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.participate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Стили для чата победителей */
+.winners-chat {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.live-badge {
+    background: #ff0000;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+.chat-messages {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-top: 10px;
+}
+
+.chat-message {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.chat-time {
+    font-size: 10px;
+    color: #aaa;
+    margin-right: 8px;
+}
+
+.chat-name {
+    color: #f8d56b;
+    margin-right: 5px;
+}
+
+.chat-prize {
+    font-weight: bold;
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+    .level-progress {
+        flex-wrap: wrap;
+    }
+    
+    .level-item {
+        flex: 0 0 33.333%;
+        margin-bottom: 20px;
+    }
+    
+    .countdown-banner {
+        padding: 10px;
+    }
+    
+    .countdown-timer {
+        font-size: 18px;
+    }
+}

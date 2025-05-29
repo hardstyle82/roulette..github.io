@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рулетка с призами</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Рулетка с призами</h1>
+        
+        <div class="subscription-notice">
+            <p>Подпишитесь на канал <a href="https://t.me/zarabotay_depin" target="_blank">@zarabotay_depin</a>, чтобы крутить рулетку</p>
+        </div>
+        
+        <!-- Добавлен баннер с таймером -->
+        <div class="countdown-banner">
+            <h3>Следующий розыгрыш 1000 звёзд через:</h3>
+            <div class="countdown-timer" id="countdownTimer">00:00:00</div>
+            <button class="participate-btn">Участвовать</button>
+        </div>
+        
+        <div class="wheel-container">
+            <div class="wheel" id="wheel">
+                <!-- Сектора будут добавлены через JS -->
+            </div>
+            <div class="wheel-center"></div>
+            <div class="wheel-pointer"></div>
+        </div>
+        
+        <button class="spin-btn" id="spinBtn" disabled>Крутить рулетку</button>
+        
+        <!-- Добавлены уровни -->
+        <div class="levels-container" id="levelsContainer">
+            <h3>Ваш прогресс</h3>
+            <!-- Уровни будут добавлены через JS -->
+        </div>
+        
+        <div class="stars-container">
+            <button class="get-stars-btn" id="getStarsBtn" disabled>Получить звёзды (555)</button>
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+                <span class="stars-count" id="starsCount">0 звёзд</span>
+            </div>
+        </div>
+        
+        <div class="bonus-section">
+            <div class="daily-bonus">
+                <h3>Ежедневный бонус</h3>
+                <button class="daily-btn" id="dailyBtn">Получить 5 звёзд</button>
+                <p id="dailyTimer"></p>
+            </div>
+            
+            <div class="referral">
+                <h3>Реферальная программа</h3>
+                <p>Пригласи друзей и получай 10 звёзд за каждого!</p>
+                <div class="referral-link">
+                    <input type="text" id="referralLink" readonly>
+                    <button class="copy-btn" id="copyBtn">Копировать</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Улучшенный чат победителей -->
+        <div class="winners-chat">
+            <h3>Чат победителей <span class="live-badge">LIVE</span></h3>
+            <div class="chat-messages" id="winnersChat">
+                <!-- Сообщения будут добавляться через JS -->
+            </div>
+        </div>
+    </div>
+    
+    <audio id="spinSound" src="sounds/wheel-spin.mp3" preload="auto"></audio>
+    
+    <script src="script.js"></script>
+</body>
+</html>
